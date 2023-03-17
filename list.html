@@ -49,53 +49,53 @@
     <h2 class="title">
         <center><b>DAFTAR ASPIRASI</b></center><br>
     </h2>
-    <div>
-    <input 
-        type="text" 
-        id="myInput" 
-        name="TOPIK" 
-        onkeyup="search()" 
-        placeholder="Search for topik..." 
-        title="Type in a topik"
-    >
-    </div>
-    <div style="overflow-x:auto;">
-    <table class="sortable" id="myTable">
-    <thead>
-        <tr>
-            <th class="justify">ID</th>
-            <th class="justify">TOPIK</th>
-            <th class="justify">WAKTU</th>
-            <th class="justify">ASPIRASI</th>
-            <th class="justify">HARAPAN/USULAN</th>
-            <th class="justify">STATUS</th>
-        </tr>
-    </thead>
-    <tbody data-sheetdb-url="https://sheetdb.io/api/v1/pqhpz29illmqz" data-sheetdb-sort-by="ID" data-sheetdb-sort-order="desc">
-        <tr>
-            <td class="justify">
-                <h5 class="h5">{{ID}}</h5>
-            </td>
-            <td class="justify">
-                <h5 class="h5"><strong>{{TOPIK}}</strong></h5>
-            </td>
-            <td class="justify">
-                <h5 class="h5">{{Timestamp}}</h5>
-            </td>
-            <td class="justify">
-                <h5 class="h5" style="text-align:justify">{{Kritik dan/atau Saran}}</h5>
-            </td>
-            <td class="justify">
-                <h5 class="h5" style="text-align:justify">{{Harapan/Usulan}}</h5>
-            </td>
-            <td class="justify">
-                <h5 class="h5"><b style="color: #5AAB61;text-align:center">{{TERSAMPAIKAN}}
-                    <span style="color: #c61a09;text-align:center">{{TEREKAP}}</span></b>
-                </h5>
-            </td>
-        </tr>
-    </tbody>
-    </table>
+    <div class="tabel">
+        <div class="search">
+            <input 
+                type="text" 
+                id="myInput" 
+                name="TOPIK" 
+                onkeyup="search()" 
+                placeholder="Search for topik..." 
+                title="Type in a topik"
+            >
+        </div>
+        <table class="sortable" id="myTable">
+            <thead>
+                <tr>
+                    <th class="justify">ID</th>
+                    <th class="justify">TOPIK</th>
+                    <th class="justify">WAKTU</th>
+                    <th class="justify">ASPIRASI</th>
+                    <th class="justify">HARAPAN/USULAN</th>
+                    <th class="justify">STATUS</th>
+                </tr>
+            </thead>
+            <tbody data-sheetdb-url="https://sheetdb.io/api/v1/pqhpz29illmqz" data-sheetdb-sort-by="ID" data-sheetdb-sort-order="desc">
+                <tr>
+                    <td class="justify">
+                        <h5 class="h5">{{ID}}</h5>
+                    </td>
+                    <td class="justify">
+                        <h5 class="h5"><strong>{{TOPIK}}</strong></h5>
+                    </td>
+                    <td class="justify">
+                        <h5 class="h5">{{Timestamp}}</h5>
+                    </td>
+                    <td class="justify">
+                        <h5 class="h5" style="text-align:justify">{{Kritik dan/atau Saran}}</h5>
+                    </td>
+                    <td class="justify">
+                        <h5 class="h5" style="text-align:justify">{{Harapan/Usulan}}</h5>
+                    </td>
+                    <td class="justify">
+                        <h5 class="h5"><b style="color: #5AAB61;text-align:center">{{TERSAMPAIKAN}}
+                            <span style="color: #c61a09;text-align:center">{{TEREKAP}}</span></b>
+                        </h5>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

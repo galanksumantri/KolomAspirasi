@@ -35,6 +35,12 @@
     background-size: 100px 100px;
     background-repeat: space;
 }
+.form-aspirasi {
+    margin: 0 5%;
+}
+.ff-button-bar {
+    display:none;
+}
 
 /* List */
 .title {
@@ -135,5 +141,11 @@ thead, tbody tr:hover {
   padding: 12px 12px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
-  float: right;
+}
+.search {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.tabel {
+    margin: 0 5%;
 }
