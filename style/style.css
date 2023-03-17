@@ -73,22 +73,6 @@ hr {
     margin-left: 10%;
     margin-right: 10%;
 }
-.button {
-    position: fixed;
-    background-color: #6EC1E4;
-    border-radius: 18px;
-    padding: 10px;
-    border: none;
-    bottom: 35%;
-    right: 30px;
-}
-.button:hover {
-    background-color: green;
-}
-#pantau {
-    border-radius: 50px;
-    margin: auto;
-}
 #up:hover {
     background-color: green;
 }
@@ -106,11 +90,6 @@ hr {
     right: 35px;
     padding: 5px;
     background-color: #fff;
-}
-#textButton {
-    color: black;
-    margin: 8px 8px 8px 8px;
-    vertical-align: middle;
 }
 .status {
    border-radius:20px;
