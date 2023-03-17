@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <script src="https://sheetdb.io/handlebars.js"></script>
+    <script>
+    function downFunction() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+    function upFunction() {
+        window.scrollTo(document.body.scrollHeight, 0);
+    }
+    function search() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    };
+    </script>
+    <style>
+        .title {
+            color: #6EC1E4; 
+            font-family: Open Sans; 
+        }
+        hr {
+            border: 0;
+            clear: both;
+            display: block;
+            background-color: grey;
+            height: 2px;
+            max-width: none;
+        }
+        .justify {
+            text-align: center;
+            color: black;
+        }
+        .h5 {
+            margin-bottom: 16px;
+            font-family: Open Sans;
+            font-weight: 525;
+            font-size: 15px;
+            line-height: 1.5;
+            color: rgb(51, 51, 51);
+        }
+        .container {
+            font-size: 20px;
+            line-height: 25px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .button {
+            position: fixed;
+            background-color: #6EC1E4;
+            border-radius: 18px;
+            padding: 10px;
+            border: none;
+            bottom: 35%;
+            right: 30px;
+        }
+        .button:hover {
+            background-color: green;
+        }
+        #pantau {
+            border-radius: 50px;
+            margin: auto;
+        }
+        #up:hover {
+            background-color: green;
+        }
+        #down:hover {
+            background-color: green;
+        }
+        #up {
+            bottom: 50px;
+            right: 70px;
+            padding: 5px;
+            background-color: #fff;
+        }
+        #down {
+            bottom: 50px;
+            right: 35px;
+            padding: 5px;
+            background-color: #fff;
+        }
+        #textButton {
+            color: black;
+            margin: 8px 8px 8px 8px;
+            vertical-align: middle;
+        }
+        .status {
+           border-radius:20px;
+           padding:5px 10px;
+           background-color:white;
+           text-align:center;
+        }
+        .content table td {
+           padding: 10px;
+        }
+        .content table th {
+          padding: 10px;
+        }
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        thead, tbody tr:hover {
+          background-color: #f1f1f1;
+        }
+        #myInput {
+          border-radius: 20px;
+          background-image: url('https://www.w3schools.com/css/searchicon.png');
+          background-position: 10px 10px;
+          background-repeat: no-repeat;
+          width: 200px;
+          font-size: 16px;
+          padding: 12px 12px 12px 40px;
+          border: 1px solid #ddd;
+          margin-bottom: 12px;
+          float: right;
+        }
+    </style>
+</head>
+<body>
+    <button 
+        id="pantau" 
+        class="button" 
+        onclick="location.href='https://docs.google.com/spreadsheets/d/1dx1hL-ds81IUzHBET4oH86FTUqgXp7LdvB7u-G4jhfU/htmlview'" 
+        type="button"
+    >
+        <img 
+            src="https://www.svgrepo.com/show/318363/show.svg" 
+            style="vertical-align:middle" 
+            width="20" 
+            height="20"
+        >
+        <span class="d-none d-md-inline" id="textButton"><b>Pantau Advokasi</b></span>
+    </button>
+    <button 
+        id="up" 
+        class="button" 
+        onclick="downFunction()" 
+        type="button">
+        <img 
+            src="https://cdn0.iconfinder.com/data/icons/arrows-148/24/arrow-down-512.png" 
+            alt="arrow down" 
+            style="width:20px">
+    </button>
+    <button 
+        id="down" 
+        class="button" 
+        onclick="upFunction()" 
+        type="button">
+        <img 
+            src="https://cdn0.iconfinder.com/data/icons/arrows-148/24/arrow-up-512.png" 
+            alt="arrow down" 
+            style="width:20px"
+        >
+    </button>
+    <h2 class="title">
+        <center><b>DAFTAR ASPIRASI</b></center><br>
+    </h2>
+    <div>
+    <input 
+        type="text" 
+        id="myInput" 
+        name="TOPIK" 
+        onkeyup="search()" 
+        placeholder="Search for topik..." 
+        title="Type in a topik"
+    >
+    </div>
+    <div style="overflow-x:auto;">
+    <table class="sortable" id="myTable">
+    <thead>
+        <tr>
+            <th class="justify">ID</th>
+            <th class="justify">TOPIK</th>
+            <th class="justify">WAKTU</th>
+            <th class="justify">ASPIRASI</th>
+            <th class="justify">HARAPAN/USULAN</th>
+            <th class="justify">STATUS</th>
+        </tr>
+    </thead>
+    <tbody data-sheetdb-url="https://sheetdb.io/api/v1/pqhpz29illmqz" data-sheetdb-sort-by="ID" data-sheetdb-sort-order="desc">
+        <tr>
+            <td class="justify">
+                <h5 class="h5">{{ID}}</h5>
+            </td>
+            <td class="justify">
+                <h5 class="h5"><strong>{{TOPIK}}</strong></h5>
+            </td>
+            <td class="justify">
+                <h5 class="h5">{{Timestamp}}</h5>
+            </td>
+            <td class="justify">
+                <h5 class="h5" style="text-align:justify">{{Kritik dan/atau Saran}}</h5>
+            </td>
+            <td class="justify">
+                <h5 class="h5" style="text-align:justify">{{Harapan/Usulan}}</h5>
+            </td>
+            <td class="justify">
+                <h5 class="h5"><b style="color: #5AAB61;text-align:center">{{TERSAMPAIKAN}}
+                    <span style="color: #c61a09;text-align:center">{{TEREKAP}}</span></b>
+                </h5>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+</body>
+</html>
